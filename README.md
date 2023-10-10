@@ -1,9 +1,6 @@
 # Guia Completo de Estudos de Inteligência Artificial
 ## Introdução
-Este guia foi criado com o intuito de ajudar pessoas que estão iniciando seus estudos em Inteligência Artificial, ou que já possuem algum conhecimento e querem se aprofundar mais no assunto. O guia é dividido em 3 partes:
-- **Parte 1**: Fundamentos de Inteligência Artificial
-- **Parte 2**: Aprendizado de Máquina
-- **Parte 3**: Redes Neurais Artificiais
+Este guia foi criado com o intuito de ajudar pessoas que estão iniciando seus estudos em Inteligência Artificial, ou que já possuem algum conhecimento e querem se aprofundar mais no assunto.
 
 ## Parte 1: Fundamentos de Inteligência Artificial
 ### O que é Inteligência Artificial?
@@ -192,3 +189,16 @@ A IA pode ser classificada em 3 tipos:
         - **Aprendizado de Máquina**
         - **Aprendizado Profundo**
         - **Aprendizado por Reforço**
+
+## Parte 2: Ambiente de Desenvolvimento
+Para começarmos a trabalhar com IA e desenvolver nossos projetos, precisamos de um ambiente de desenvolvimento. Nesta seção, vamos ver como configurar um ambiente de desenvolvimento para IA.
+### Linguagens de Programação
+A linguagem de programação que iremos útilizar enquanto estudamos vai ser a mais influente no mercado de IA que temos atualmente, o **Python**. Python é uma linguagem de programação de alto nível, interpretada, de script, imperativa, orientada a objetos, funcional, de tipagem dinâmica. Ela é uma linguagem de propósito geral, ou seja, pode ser utilizada para resolver diversos tipos de problemas. Python é uma linguagem de programação muito utilizada em IA, devido a sua facilidade de uso e a sua grande comunidade. Além disso, Python possui diversas bibliotecas que facilitam o desenvolvimento de projetos de IA, como: **NumPy**, **Pandas**, **Matplotlib**, **Scikit-Learn**, **TensorFlow**, **PyTorch**, entre outras.
+#### Gerenciadores de versões e Ambientes Virtuais em Python
+Controlar a versão do **executável de Python** que estará rodando no seu projeto, para que seja possível **trabalhar em paralelo com múltiplas versões**, sem que vire uma bagunça e Controlar as **dependências** do seu projeto, para que seja possível **trabalhar em paralelo com múltiplos projetos**, sem que vire uma bagunça. Para resolver esses problemas, existem duas ferramentas muito utilizadas no mundo Python: **pyenv** e **virtualenv**.
+##### Opções de gerenciadores
+* **pyenv**
+    - [Install and Documentation](https://github.com/pyenv/pyenv)
+    - O _pyenv_ é um gerenciador de versões de Python. Ele permite que você instale e gerencie múltiplas versões de Python no seu computador. Além disso, ele permite que você defina qual versão de Python será utilizada em cada projeto, isso é, em cada diretório você pode rodar uma versão específica de Python.
+* **pipenv**
+    - [Install and Documentation]()
