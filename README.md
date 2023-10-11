@@ -190,15 +190,214 @@ A IA pode ser classificada em 3 tipos:
         - **Aprendizado Profundo**
         - **Aprendizado por Reforço**
 
-## Parte 2: Ambiente de Desenvolvimento
+
+## Parte 2: Python
+Para estudarmos IA nada melhor do que utilizar uma linguagem de programação que tem **grande suporte** para essa área, nesse caso o **Python**. Vou assumir que você já tem o Python instalado em sua máquina, caso não tenha, você pode baixar o Python [aqui](https://www.python.org/downloads/). Para verificar se o Python está instalado corretamente, abra o terminal e digite o seguinte comando:
+```bash
+python --version
+```
+### Tipos primitivos
+* **int**
+    - Números inteiros
+    - Int é a abreviação de integer, que significa inteiro
+    - Exemplos:
+        - 1
+        - 2
+        - 3
+* **float**
+    - Números reais
+    - Float é a abreviação de floating point number, que significa número de ponto flutuante
+    - Exemplos:
+        - 1.0
+        - 2.0
+        - 3.0
+* **bool**
+    - Booleanos
+    - Booleanos são valores lógicos, ou seja, verdadeiro ou falso
+    - Exemplos:
+        - True
+        - False
+* **str**
+    - Strings
+    - Strings são uma sequência de caracteres
+    - Exemplos:
+        - "Hello World"
+        - "I'm a String"
+        - "Some text"
+* **list**
+    - Listas
+    - Listas são uma sequência de valores podendo ser de qualquer tipo
+    - Exemplos:
+        - [1, 2, 3]
+        - [1.0, 2.0, 3.0]
+        - [True, False, True]
+        - ["Hello World", "I'm a String", "Some text"]
+        - [1, 2.0, True, "Hello World"]
+* **tuple**
+    - Tuplas
+    - Tuplas são uma sequência de valores podendo ser de qualquer tipo porém diferentes de listas, tuplas são imutáveis, ou seja, não podem ser alteradas depois de definidas
+    - Exemplos:
+        - (1, 2, 3)
+        - (1.0, 2.0, 3.0)
+        - (True, False, True)
+        - ("Hello World", "I'm a String", "Some text")
+* **dict**
+    - Dicionários
+    - Dicionários são uma sequência de pares chave-valor, onde cada chave é única e cada valor pode ser de qualquer tipo
+    - Exemplos:
+        - {"key1": 1, "key2": 2, "key3": 3}
+        - {"key1": 1.0, "key2": 2.0, "key3": 3.0}
+        - {"key1": True, "key2": False, "key3": True}
+        - {"key1": "Hello World", "key2": "I'm a String", "key3": "Some text"}
+Podemos utilizar a função **type()** para verificar o tipo de uma variável:
+```python
+type(1) # int
+type(1.0) # float
+type(True) # bool
+type("Hello World") # str
+```
+
+### Funções
+Funções em uma linguagem de programação são blocos de código que podem ser chamados em qualquer parte do código. Funções podem receber parâmetros e retornar valores. Para definir uma função em Python, utilizamos a palavra reservada **def**. Para retornar um valor em uma função, utilizamos a palavra reservada **return**. Para chamar uma função, utilizamos o nome da função seguido de parênteses, onde podemos passar os parâmetros da função. Exemplo:
+```python
+def soma(a, b):
+    return a + b
+
+soma(1, 2) # 3
+```
+### Estruturas de Controle
+Estruturas de controle são blocos de código que permitem controlar o fluxo de execução do programa. As principais estruturas de controle são:
+* **if**
+    - O if é uma estrutura de controle que permite executar um bloco de código caso uma condição seja verdadeira
+    - Exemplo:
+        ```python
+        if 1 == 1:
+            print("1 é igual a 1")
+        ```
+* **else**
+    - O else é uma estrutura de controle que permite executar um bloco de código caso uma condição seja falsa
+    - Exemplo:
+        ```python
+        if 1 == 2:
+            print("1 é igual a 2")
+        else:
+            print("1 não é igual a 2")
+        ```
+* **elif**
+    - O elif é uma estrutura de controle que permite executar um bloco de código caso uma condição seja verdadeira, porém só é executado caso a condição do if seja falsa
+    - Exemplo:
+        ```python
+        if 1 == 2:
+            print("1 é igual a 2")
+        elif 1 == 1:
+            print("1 é igual a 1")
+        else:
+            print("1 não é igual a 1 nem a 2")
+        ```
+* **for**
+    - O for é uma estrutura de controle que permite executar um bloco de código para cada elemento de uma sequência
+    - Exemplo:
+        ```python
+        for i in [1, 2, 3]:
+            print(i)
+        ```
+* **while**
+    - O while é uma estrutura de controle que permite executar um bloco de código enquanto uma condição for verdadeira
+    - Exemplo:
+        ```python
+        i = 0
+        while i < 3:
+            print(i)
+            i += 1
+        ```
+### Classes e Objetos
+Classes e objetos são conceitos muito importantes em programação orientada a objetos. Uma classe é um modelo que define os atributos e métodos de um objeto. Um objeto é uma instância de uma classe. Para definir uma classe em Python, utilizamos a palavra reservada **class**. Para criar um objeto de uma classe, utilizamos o nome da classe seguido de parênteses, onde podemos passar os parâmetros do construtor da classe. Exemplo:
+```python
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+```
+#### Atributos
+Atributos são características de um objeto. Para acessar um atributo de um objeto, utilizamos o nome do objeto seguido de um ponto e o nome do atributo. Exemplo:
+```python
+pessoa = Pessoa("João", 20)
+pessoa.nome # João
+pessoa.idade # 20
+```
+#### Métodos
+Métodos são funções de um objeto. Para chamar um método de um objeto, utilizamos o nome do objeto seguido de um ponto e o nome do método. Exemplo:
+```python
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+    def falar(self):
+        print("Olá, meu nome é " + self.nome + " e eu tenho " + str(self.idade) + " anos")
+
+pessoa = Pessoa("João", 20)
+
+pessoa.falar() # Olá, meu nome é João e eu tenho 20 anos
+```
+### Bibliotecas
+Bibliotecas são conjuntos de funções que podem ser utilizadas em um programa. Para utilizar uma biblioteca em Python, utilizamos a palavra reservada **import**. Exemplo:
+```python
+import math
+math.sqrt(4) # 2.0
+```
+
+## Parte 3: Ambiente de Desenvolvimento
 Para começarmos a trabalhar com IA e desenvolver nossos projetos, precisamos de um ambiente de desenvolvimento. Nesta seção, vamos ver como configurar um ambiente de desenvolvimento para IA.
 ### Linguagens de Programação
 A linguagem de programação que iremos útilizar enquanto estudamos vai ser a mais influente no mercado de IA que temos atualmente, o **Python**. Python é uma linguagem de programação de alto nível, interpretada, de script, imperativa, orientada a objetos, funcional, de tipagem dinâmica. Ela é uma linguagem de propósito geral, ou seja, pode ser utilizada para resolver diversos tipos de problemas. Python é uma linguagem de programação muito utilizada em IA, devido a sua facilidade de uso e a sua grande comunidade. Além disso, Python possui diversas bibliotecas que facilitam o desenvolvimento de projetos de IA, como: **NumPy**, **Pandas**, **Matplotlib**, **Scikit-Learn**, **TensorFlow**, **PyTorch**, entre outras.
+
 #### Gerenciadores de versões e Ambientes Virtuais em Python
-Controlar a versão do **executável de Python** que estará rodando no seu projeto, para que seja possível **trabalhar em paralelo com múltiplas versões**, sem que vire uma bagunça e Controlar as **dependências** do seu projeto, para que seja possível **trabalhar em paralelo com múltiplos projetos**, sem que vire uma bagunça. Para resolver esses problemas, existem duas ferramentas muito utilizadas no mundo Python: **pyenv** e **virtualenv**.
+Controlar a versão do **executável de Python** que estará rodando no seu projeto, para que seja possível **trabalhar em paralelo com múltiplas versões**, sem que vire uma bagunça e Controlar as **dependências** do seu projeto, para que seja possível **trabalhar em paralelo com múltiplos projetos**. Para resolver esses problemas, existem duas ferramentas muito utilizadas no mundo Python: **pyenv** e **virtualenv**.
+
 ##### Opções de gerenciadores
 * **pyenv**
     - [Install and Documentation](https://github.com/pyenv/pyenv)
     - O _pyenv_ é um gerenciador de versões de Python. Ele permite que você instale e gerencie múltiplas versões de Python no seu computador. Além disso, ele permite que você defina qual versão de Python será utilizada em cada projeto, isso é, em cada diretório você pode rodar uma versão específica de Python.
 * **pipenv**
-    - [Install and Documentation]()
+    - [Install and Documentation](https://pipenv.pypa.io/en/latest/)
+    - O _pipenv_ é um gerenciador de dependências de Python. Ele permite que você instale e gerencie as dependências de cada projeto. Além disso, ele permite que você defina quais dependências serão utilizadas em cada projeto, isso é, em cada diretório você pode rodar uma versão específica de cada dependência.
+
+##### Extensões para VSCode
+Para escrevermos nosso código precisamos de um editor de código, existem muitos no mercado porém aqui vamos utilizar o _VSCode_ por ser um editor de código gratuito, open source e multiplataforma. Para facilitar o desenvolvimento de projetos em Python no VSCode, vamos utilizar algumas extensões:
+* **Python**
+    - [Install and Documentation](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+    - Essa extensão é a extensão oficial da Microsoft para desenvolvimento de projetos em Python no VSCode. Ela possui diversas funcionalidades, como: linting, debugging, autocomplete, entre outras.
+* **autoDocstring**
+    - [Install and Documentation](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
+    - Essa extensão é utilizada para gerar automaticamente a documentação de funções e métodos em Python.
+
+
+## Parte 4: Estatística
+### Introdução
+Para começarmos a estudar IA, precisamos entender alguns conceitos básicos de estatística. Nesta seção, vamos estudar os conceitos básicos da **estatística descritiva**, para o uso em **análise de dados**, **exploração inicial de dados** para geração de insights e **identificação de padrões**. Estas informações podem ser usadas para escolher o **modelo de machine learning ideal** para a tarefa, para **ajustar os parâmetros** do modelo e para **avaliar o desempenho** do modelo.
+#### O que é Estatística?
+A estatística é a ciência que trata da coleta, organização, análise e interpretação de dados. Ela é usada em diversas áreas, como negócios, ciência, engenharia, governo e medicina.
+
+A estatística é uma ferramenta poderosa que pode ser usada para tomar decisões informadas. Por exemplo, uma empresa pode usar a estatística para prever a demanda de um produto, para que ela possa produzir a quantidade certa de produtos e evitar desperdício. Um médico pode usar a estatística para diagnosticar uma doença, para que ele possa tratar o paciente corretamente e evitar complicações.
+
+* **Probabilidade**
+    - É a área que estuda as chances de **eventos aleatórios** acontecerem. Ela é usada para medir a incerteza de eventos, e para fazer previsões sobre o futuro.
+* **Estatística Descritiva**
+    - É a área que estuda como **descrever e resumir** um conjunto de dados. Ela é usada para **analisar** e **explorar** os dados, para **identificar padrões** e **gerar insights**.
+* **Estatística Inferencial**
+    - É a área que estuda como **fazer inferências** sobre uma população a partir de uma amostra. Ela é usada para **fazer previsões** sobre o futuro, e para **tomar decisões**.
+
+#### População e Amostra
+* **População**
+    - Se refere a todo o conjunto de elementos que compartilham uma característica comum. Por exemplo, se estamos interessados nas alturas de todos os alunos de uma escola, a população é o conjunto de todas as alturas dos alunos da escola.
+* **Amostra**
+    - Se refere a um subconjunto da população. Por exemplo, se estamos interessados nas alturas de todos os alunos de uma escola, uma amostra pode ser o conjunto de alturas de 10 alunos da escola.
+#### Tipos de Variáveis
+* **Variável Qualitativa**
+    - É uma variável que não pode ser medida numericamente. Por exemplo, se estamos interessados no gênero dos alunos de uma escola, a variável é qualitativa.
+
+* **Variável Quantitativa**
+    - É uma variável que pode ser medida numericamente. Por exemplo, se estamos interessados nas alturas dos alunos de uma escola, a variável é quantitativa.
+
+#### Teorema do Limite Central
