@@ -401,3 +401,235 @@ A estatística é uma ferramenta poderosa que pode ser usada para tomar decisõe
     - É uma variável que pode ser medida numericamente. Por exemplo, se estamos interessados nas alturas dos alunos de uma escola, a variável é quantitativa.
 
 #### Teorema do Limite Central
+O Teorema do Ponto Central é um conceito importante na área de estatística e é frequentemente utilizado em experimentos e análises estatísticas, especialmente quando se trata de médias e distribuições de dados. Este teorema estabelece que, sob certas condições, a distribuição das médias amostrais de uma população tende a se aproximar de uma distribuição normal, mesmo que a população original não siga uma distribuição normal.
+
+Aqui estão os principais pontos do Teorema do Ponto Central:
+
+    Aleatoriedade das amostras: O teorema pressupõe que as amostras sejam selecionadas de forma aleatória e independente da população.
+
+    Tamanho da amostra grande: O Teorema do Ponto Central se aplica melhor quando o tamanho da amostra é suficientemente grande. Não há um número exato que define o que é "suficientemente grande", mas geralmente, amostras com mais de 30 observações são consideradas adequadas.
+
+    Médias amostrais aproximadamente normais: O teorema afirma que, à medida que o tamanho das amostras aumenta, a distribuição das médias amostrais se torna aproximadamente normal, independentemente da forma da distribuição da população original.
+
+Isso é útil porque a distribuição normal é bem compreendida e permite a aplicação de técnicas estatísticas mais poderosas. Muitos testes de hipóteses e intervalos de confiança pressupõem a normalidade dos dados ou da distribuição das médias amostrais.
+
+Em resumo, o Teorema do Ponto Central fornece uma base para a utilização da distribuição normal em muitos contextos estatísticos, tornando mais fácil realizar inferências sobre as populações a partir de amostras, desde que as condições sejam atendidas, especialmente o tamanho da amostra seja suficientemente grande.
+
+## Parte 5: Usando Pandas no Python
+Para começarmos, vamos criar um ambiente Python utilizando o **pyenv** e o **pipenv**. Para isso, vamos abrir o terminal e digitar os seguintes comandos:
+```bash
+mkdir Python
+cd Python
+mkdir estatistica
+cd estatistica
+pipenv install pandas --python 3.11.0
+pipenv shell
+```
+Agora que estamos dentro do ambiente Python, vamos criar um arquivo chamado **main.py** e vamos abrir ele no VSCode. Para isso, vamos digitar os seguintes comandos no terminal:
+```bash
+touch main.py
+code .
+```
+Agora que estamos com o VSCode aberto, vamos importar a biblioteca **pandas** e vamos criar um DataFrame. Para isso, vamos digitar o seguinte código no arquivo **main.py**:
+    * **O que é  um Dataframe?**
+        - Um dataframe é uma estrutura de dados bidimensional, tabular, heterogênea, rotulada, com eixos potencialmente heterogêneos. Ele é semelhante a uma planilha ou a uma tabela de banco de dados.
+        - Para entendermos melhor, vamos criar um dicionário com os dados de 3 pessoas para nosso exemplo.
+```python
+import pandas as pd
+
+dict_pessoas = {
+    "nome": ["João", "Maria", "José"],
+    "idade": [20, 30, 40],
+    "sexo": ["M", "F", "M"]
+}
+
+## A partir do dicionário, vamos criar um dataframe
+
+df_pessoas = pd.Dataframe.from_dict(dict_pessoas)
+
+print(df_pessoas)
+```
+### Medidas de posição
+Medidas de posição são medidas que resumem um conjunto de dados em um único valor, você pode lembrar delas das suas aulas de matemática. As principais medidas de posição são:
+* **Média**
+    - A média é a soma de todos os valores dividido pela quantidade de valores. Ela é usada para resumir um conjunto de dados em um único valor.
+    - Exemplo:
+        ```python
+        import pandas as pd
+
+        dict_pessoas = {
+            "nome": ["João", "Maria", "José"],
+            "idade": [20, 30, 40],
+            "sexo": ["M", "F", "M"]
+        }
+
+        df_pessoas = pd.Dataframe.from_dict(dict_pessoas)
+
+        print(df_pessoas["idade"].mean()) # 30
+        ```
+* **Mediana**
+    - A mediana é o valor que separa a metade maior e a metade menor de um conjunto de dados. Ela é usada para resumir um conjunto de dados em um único valor.
+    - Exemplo:
+        ```python
+        import pandas as pd
+
+        dict_pessoas = {
+            "nome": ["João", "Maria", "José"],
+            "idade": [20, 30, 40],
+            "sexo": ["M", "F", "M"]
+        }
+
+        df_pessoas = pd.Dataframe.from_dict(dict_pessoas)
+
+        print(df_pessoas["idade"].median()) # 30
+        ```
+* **Moda**
+    - A moda é o valor que aparece com maior frequência em um conjunto de dados. Ela é usada para resumir um conjunto de dados em um único valor.
+    - Exemplo:
+        ```python
+        import pandas as pd
+
+        dict_pessoas = {
+            "nome": ["João", "Maria", "José"],
+            "idade": [20, 30, 40],
+            "sexo": ["M", "F", "M"]
+        }
+
+        df_pessoas = pd.Dataframe.from_dict(dict_pessoas)
+
+        print(df_pessoas["idade"].mode()) # 20
+        ```
+### Media de dispersão
+Medidas de dispersão são medidas que resumem a variabilidade de um conjunto de dados. As principais medidas de dispersão são:
+* **Variância**
+    - A variância é a média dos quadrados das diferenças entre cada valor e a média. Ela é usada para resumir a variabilidade de um conjunto de dados.
+    - Exemplo:
+        ```python
+        import pandas as pd
+
+        dict_pessoas = {
+            "nome": ["João", "Maria", "José"],
+            "idade": [20, 30, 40],
+            "sexo": ["M", "F", "M"]
+        }
+
+        df_pessoas = pd.Dataframe.from_dict(dict_pessoas)
+
+        print(df_pessoas["idade"].var()) # 66.66666666666667
+        ```
+* **Desvio Padrão**
+    - O desvio padrão é a raiz quadrada da variância. Ele é usado para resumir a variabilidade de um conjunto de dados na mesma unidade de medida que os dados estão sendo analizados.
+    - Exemplo:
+        ```python
+        import pandas as pd
+
+        dict_pessoas = {
+            "nome": ["João", "Maria", "José"],
+            "idade": [20, 30, 40],
+            "sexo": ["M", "F", "M"]
+        }
+
+        df_pessoas = pd.Dataframe.from_dict(dict_pessoas)
+
+        print(df_pessoas["idade"].std()) # 8.16496580927726
+        ```
+* **Coeficiente de Variação**
+    - O coeficiente de variação é o desvio padrão dividido pela média. Ele é usado para resumir a variabilidade de um conjunto de dados em uma porcentagem.
+    - Exemplo:
+        ```python
+        import pandas as pd
+
+        dict_pessoas = {
+            "nome": ["João", "Maria", "José"],
+            "idade": [20, 30, 40],
+            "sexo": ["M", "F", "M"]
+        }
+
+        df_pessoas = pd.Dataframe.from_dict(dict_pessoas)
+
+        print(df_pessoas["idade"].std() / df_pessoas["idade"].mean()) # 0.2721655269759087
+        ```
+### Medidas de Forma
+Medidas de forma são medidas que resumem a forma de um conjunto de dados. As principais medidas de forma são:
+* **Assimetria**
+    - A assimetria é uma medida que indica o quão assimétrica é a distribuição de um conjunto de dados. Ela é usada para resumir a forma de um conjunto de dados.
+    - Exemplo:
+        ```python
+        import pandas as pd
+
+        dict_pessoas = {
+            "nome": ["João", "Maria", "José"],
+            "idade": [20, 30, 40],
+            "sexo": ["M", "F", "M"]
+        }
+
+        df_pessoas = pd.Dataframe.from_dict(dict_pessoas)
+
+        print(df_pessoas["idade"].skew()) # 0.0
+        ```
+* **Curtose**
+    - A curtose é uma medida que indica o quão curtose é a distribuição de um conjunto de dados. Ela é usada para resumir a forma de um conjunto de dados.
+    - Exemplo:
+        ```python
+        import pandas as pd
+
+        dict_pessoas = {
+            "nome": ["João", "Maria", "José"],
+            "idade": [20, 30, 40],
+            "sexo": ["M", "F", "M"]
+        }
+
+        df_pessoas = pd.Dataframe.from_dict(dict_pessoas)
+
+        print(df_pessoas["idade"].kurtosis()) # -1.5
+        ```
+### Correlação
+Correlação é uma medida que indica o quão relacionadas estão duas variáveis. Ela é usada para resumir a relação entre duas variáveis. As principais medidas de correlação são:
+* **Covariância**
+    - A covariância é uma medida que indica o quão relacionadas estão duas variáveis. Ela é usada para resumir a relação entre duas variáveis.
+    - Exemplo:
+        ```python
+        import pandas as pd
+
+        dict_pessoas = {
+            "nome": ["João", "Maria", "José", "Ana"],
+            "idade": [20, 30, 40, 50],
+            "salario": [1000, 2000, 3000, 4000]
+        }
+
+        df_pessoas = pd.Dataframe.from_dict(dict_pessoas)
+
+        print(df_pessoas["idade"].cov(df_pessoas["salario"])) # 2500.0
+        ```
+* **Coeficiente de Correlação de Pearson**
+    - O coeficiente de correlação de Pearson é uma medida que indica o quão relacionadas estão duas variáveis. Ele é usado para resumir a relação entre duas variáveis variando entre -1 e 1, sendo ideal para ser utilizado com variáveis quantitativas.
+    - Exemplo:
+        ```python
+        import pandas as pd
+
+        dict_pessoas = {
+            "nome": ["João", "Maria", "José", "Ana"],
+            "idade": [20, 30, 40, 50],
+            "salario": [1000, 2000, 3000, 4000]
+        }
+
+        df_pessoas = pd.Dataframe.from_dict(dict_pessoas)
+
+        print(df_pessoas["idade"].corr(df_pessoas["salario"])) # 1.0
+        ```
+* **Coeficiente de correlação de Spearman**
+    - O coeficiente de correlação de Spearman é uma medida que indica o quão relacionadas estão duas variáveis. Ele é usado para resumir a relação entre duas variáveis variando entre -1 e 1, sendo ideal para ser utilizado com variáveis quantitativas e qualitativas.
+    - Exemplo:
+        ```python
+        import pandas as pd
+
+        dict_pessoas = {
+            "nome": ["João", "Maria", "José", "Ana"],
+            "idade": [20, 30, 40, 50],
+            "salario": [1000, 2000, 3000, 4000]
+        }
+
+        df_pessoas = pd.Dataframe.from_dict(dict_pessoas)
+
+        print(df_pessoas["idade"].corr(df_pessoas["salario"], method="spearman")) # 1.0
+        ``` 
